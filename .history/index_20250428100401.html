@@ -327,13 +327,6 @@
             else {
                 team2Total = total;
             }
-
-
-            if (team1Total > team2Total) {
-                matchResult.innerText = "TEAM 1";
-            } else if (team2Total > team1Total) {
-                matchResult.innerText = "TEAM 2";
-            }
         }
 
         startTimer(1);
@@ -349,7 +342,6 @@
                 handleHit(2, team2Table, teamTwoSore, team2Scores);
             }
         };
-
 
         resultBtn.onclick = function () {
             

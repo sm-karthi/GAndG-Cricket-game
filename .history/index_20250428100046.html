@@ -274,7 +274,7 @@
                 timeSeconds.innerText = timeLeft;
 
 
-                if (timeLeft === 0 || currentPlayer === 11) {
+                if (timeLeft === 0 || currentPlayer = 10) {
                     clearInterval(interval);
 
                     if (teamNumber === 1) {
@@ -321,19 +321,8 @@
 
             scoreSpan.innerText = total;
 
-            if (team === 1) {
-                team1Total = total;
-            }
-            else {
-                team2Total = total;
-            }
-
-
-            if (team1Total > team2Total) {
-                matchResult.innerText = "TEAM 1";
-            } else if (team2Total > team1Total) {
-                matchResult.innerText = "TEAM 2";
-            }
+            if (team === 1) team1Total = total;
+            else team2Total = total;
         }
 
         startTimer(1);
@@ -350,9 +339,14 @@
             }
         };
 
-
         resultBtn.onclick = function () {
-            
+            if (team1Total > team2Total) {
+                matchResult.innerText = "TEAM 1";
+            } else if (team2Total > team1Total) {
+                matchResult.innerText = "TEAM 2";
+            } else {
+                matchResult.innerText = "DRAW";
+            }
 
             let max1 = 0;
             let max2 = 0;
